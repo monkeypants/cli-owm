@@ -2,6 +2,7 @@
 
 import * as fs from 'fs';
 import {parse, render} from './index';
+import {VERSION} from './version';
 
 function usage(): void {
     const text = `Usage: cli-owm [options] [input-file]
@@ -34,7 +35,7 @@ function main(): void {
             usage();
             process.exit(0);
         } else if (arg === '--version') {
-            console.log('0.1.0');
+            console.log(VERSION);
             process.exit(0);
         } else if (arg === '-o' || arg === '--output') {
             outputFile = args[++i];
