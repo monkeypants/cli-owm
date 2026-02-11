@@ -1,14 +1,18 @@
 {
   "name": "cli-owm",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Render Wardley Maps from DSL text to SVG on the command line",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
   "bin": {
     "cli-owm": "dist/cli.js"
   },
   "scripts": {
     "build": "tsc",
+    "bundle": "esbuild src/cli.ts --bundle --platform=node --target=node22 --outfile=sea-bundle.js",
     "start": "node dist/cli.js",
     "test": "vitest run",
     "test:watch": "vitest"
@@ -20,6 +24,7 @@
     "@types/lodash.merge": "^4.6.9",
     "@types/node": "^20.0.0",
     "typescript": "^5.5.0",
+    "esbuild": "^0.25.0",
     "vitest": "^4.0.18"
   },
   "license": "MIT"
