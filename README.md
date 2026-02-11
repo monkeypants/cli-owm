@@ -3,7 +3,7 @@
 Render Wardley Maps from DSL text to SVG on the command line.
 
 ```
-cli-owm examples/tea-shop.owm -o tea-shop.svg
+cli-owm examples/lair-canteen.owm -o lair-canteen.svg
 cat map.owm | cli-owm > map.svg
 ```
 
