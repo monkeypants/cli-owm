@@ -1,0 +1,39 @@
+// Telling the Story
+//
+// A map is not self-explanatory.  Annotations turn a diagram into
+// a narrative: numbered callouts that walk the reader through the
+// strategic argument.  The annotation box collects them into a legend.
+//
+// Multi-coordinate annotations can highlight relationships between
+// components.  Single-coordinate annotations mark specific positions.
+//
+// When presenting to the Supreme Leader, add 3-5 annotations
+// that tell the strategic story.  Without them, the audience
+// sees structure but misses the argument — and the Q&A will
+// not go well.
+
+title VLK Operations Annotated
+
+anchor Shipping Line [0.95, 0.58]
+
+component Traction on Demand [0.82, 0.45]
+component VLK Unit [0.70, 0.25]
+component Service Ship [0.55, 0.48]
+component Hydrogen Supply [0.42, 0.62]
+component Seawater Electrolysis [0.30, 0.78]
+
+Shipping Line->Traction on Demand
+Traction on Demand->VLK Unit
+VLK Unit->Service Ship
+Service Ship->Hydrogen Supply
+Hydrogen Supply->Seawater Electrolysis
+
+// Multi-coordinate annotation — highlights a relationship
+annotation 1 [[0.68, 0.28],[0.53, 0.50]] The symbiotic loop between VLK and service ship is the key innovation
+
+// Single-coordinate annotations — mark specific strategic points
+annotation 2 [0.40, 0.65] Hydrogen from seawater closes the energy loop
+annotation 3 [0.80, 0.48] Traction pricing follows an Uber-like demand model
+
+// Legend position — where the numbered list appears
+annotations [0.90, 0.03]

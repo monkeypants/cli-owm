@@ -1,0 +1,30 @@
+// How Practices Mature
+//
+// Activities aren't the only things that evolve — practices do too.
+// A Novel practice differentiates you; a Best practice commoditises.
+// STORM's boom-pop decommissioning is still Novel (nobody else does it).
+// Hydrogen replenishment is approaching Best — the procedures are
+// documented and repeatable across the fleet.
+//
+// When a practice becomes Best, it stops being a competitive weapon.
+// STORM invests in Novel practices and lets Best practices run on
+// process discipline.  The boom-pop is Novel; hydrogen replenishment
+// is Best.  Fund accordingly.
+
+title Fleet Operations Practices
+
+evolution Novel->Emerging->Good->Best
+
+anchor Fleet Operations [0.95, 0.50]
+
+component Boom-Pop Procedure [0.80, 0.22]
+component In-Flight Maintenance [0.70, 0.35]
+component Traction Scheduling [0.60, 0.52]
+component Service Ship Dispatch [0.45, 0.58]
+component Hydrogen Replenishment [0.48, 0.75]
+
+Fleet Operations->Boom-Pop Procedure
+Fleet Operations->In-Flight Maintenance
+Fleet Operations->Traction Scheduling
+Traction Scheduling->Service Ship Dispatch
+Service Ship Dispatch->Hydrogen Replenishment

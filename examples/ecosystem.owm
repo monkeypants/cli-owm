@@ -1,0 +1,39 @@
+// Mapping the Wider Ecosystem
+//
+// STORM doesn't operate in a vacuum.  Black Market Suppliers provide
+// components unavailable through legitimate channels.  The Corrupt
+// Officials Network smooths regulatory friction.  The Rival Villain
+// Consortium competes for the same orbital mirror technology.
+//
+// These are external actors STORM influences but doesn't control.
+// The ecosystem keyword marks them as outside the org boundary.
+//
+// A map showing only internal components is planning in a bubble.
+// STORM maps its suppliers, regulators, competitors, and the Rival
+// Villain Consortium.  The bubble pops eventually — better to see
+// what's outside it.
+
+title STORM Geopolitical Landscape
+
+anchor World Domination [0.97, 0.50]
+
+component VLK Fleet [0.82, 0.25]
+component Weather Modification [0.72, 0.15]
+component Orbital Mirror [0.65, 0.38]
+component Disposable Henchmen [0.45, 0.55]
+component Shark Tank [0.38, 0.30] label [-67, 4]
+
+// External actors — outside STORM's org boundary
+ecosystem Black Market Arms Dealers [0.30, 0.75]
+ecosystem Corrupt Officials Network [0.50, 0.82]
+ecosystem Rival Villain Consortium [0.58, 0.68]
+
+World Domination->VLK Fleet
+World Domination->Orbital Mirror
+VLK Fleet->Weather Modification
+VLK Fleet->Disposable Henchmen
+Orbital Mirror->Disposable Henchmen
+Disposable Henchmen->Black Market Arms Dealers
+Disposable Henchmen->Shark Tank; motivational purposes
+VLK Fleet->Corrupt Officials Network
+Rival Villain Consortium->Orbital Mirror; contested technology

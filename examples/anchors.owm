@@ -1,0 +1,29 @@
+// Who Are You Serving?
+//
+// STORM has three stakeholders pulling on the same value chain:
+// shipping lines want cheap traction, the Supreme Leader wants a
+// flying sailboat, and maritime regulators want safety compliance.
+// Each anchor distorts priorities differently.
+//
+// A map with one user is a map with one opinion.  Multiple anchors
+// reveal the political forces that shape every technical decision
+// at STORM.
+
+title STORM Stakeholder Map
+
+anchor Shipping Lines [0.95, 0.60]
+anchor Supreme Leader [0.97, 0.25]
+anchor Maritime Regulators [0.92, 0.82]
+
+component Traction on Demand [0.80, 0.48]
+component VLK Fleet [0.65, 0.22]
+component Safety Compliance [0.72, 0.75]
+component Carbon Credits [0.58, 0.68]
+
+Shipping Lines->Traction on Demand
+Supreme Leader->VLK Fleet
+Maritime Regulators->Safety Compliance
+Traction on Demand->VLK Fleet
+Safety Compliance->VLK Fleet
+Traction on Demand->Carbon Credits
+Maritime Regulators->Carbon Credits

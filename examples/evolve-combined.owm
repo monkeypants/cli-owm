@@ -1,0 +1,53 @@
+// The Technology Roadmap
+//
+// Project Thunderkite: STORM's R&D evolution targets, approved by
+// the Supreme Leader at the Q2 offsite (volcano-side breakout room B).
+//
+// Each evolve line is a strategic decision.  Kite Prototype outsources
+// at scale because STORM can't manufacture fast enough.  Control Software
+// buys an AI Autopilot from a disreputable vendor because building
+// in-house would take three more years.
+//
+// A technology roadmap without evolution targets is just a shopping
+// list.  Each arrow must answer: who will supply this at the next
+// stage, and what capability does STORM lose or gain?
+
+title Project Thunderkite Roadmap
+
+anchor Supreme Leader [0.97, 0.50]
+
+component Kite Prototype [0.80, 0.20] (build)
+component Control Software [0.65, 0.18] (build)
+component Carbon Fibre Spars [0.55, 0.45]
+component Launch Platform [0.72, 0.35]
+component Satellite Uplink [0.45, 0.50]
+component String [0.35, 0.70]
+
+// STORM can't scale kite fabrication in-house forever.  Once the
+// industrial dirigible market exists, outsource to capture volume.
+//
+// Any Genesis component built because no supplier existed.  When
+// the market catches up, stop building and start buying.
+evolve Kite Prototype->Mega Kite Array 0.65 (outsource) label [16, -15]
+evolve Control Software->AI Autopilot 0.58 (buy) label [-20, 10]
+
+// Compound decorators: Carbon Fibre evolves toward a market where
+// STORM can buy rather than fabricate.  Cloud Uplink replaces the
+// bespoke satellite link with a commodity service.
+evolve Carbon Fibre Spars 0.78 (market, buy)
+evolve Satellite Uplink->Cloud Uplink 0.80 (market, outsource) label [5, -20]
+
+// Decorator on a component shows current sourcing posture
+component Hydrogen Envelope [0.80, 0.22] (build)
+
+// Evolve with renaming and decorator — the sourcing strategy changes
+evolve Hydrogen Envelope->Composite Envelope 0.55 (buy)
+
+Supreme Leader->Kite Prototype
+Supreme Leader->Launch Platform
+Kite Prototype->Control Software
+Kite Prototype->Carbon Fibre Spars
+Launch Platform->Satellite Uplink
+Control Software->Satellite Uplink
+Carbon Fibre Spars->String; surprisingly important
+Supreme Leader->Hydrogen Envelope

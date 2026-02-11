@@ -1,0 +1,36 @@
+// The Closed Loop
+//
+// The VLK-service ship hydrogen cycle is a closed loop: the kite
+// provides traction, the service ship converts that traction into
+// hydrogen via submerged turbines, and the hydrogen feeds back up
+// to the kite.  The kite pays for its own upkeep with wind energy.
+//
+// Colour style highlights the circular dependency structure.
+// Strategic independence from supply chains is the lesson here —
+// STORM doesn't need external hydrogen because the loop is closed.
+//
+// Circular value chains are rare and powerful.  The Rival Villain
+// Consortium can't replicate this loop by buying components — it's
+// a structural advantage baked into the physics of the operation.
+// Protect it.
+
+title Service Ship Hydrogen Cycle
+
+style colour
+
+anchor VLK Unit [0.95, 0.38]
+
+component Traction [0.85, 0.55]
+component Submerged Turbines [0.72, 0.65]
+component Electrolysis Plant [0.58, 0.50]
+component Hydrogen Storage [0.48, 0.62]
+component Maintenance Crew [0.65, 0.30]
+component Seawater Intake [0.40, 0.78]
+
+VLK Unit->Traction
+VLK Unit->Maintenance Crew
+Traction->Submerged Turbines
+Submerged Turbines->Electrolysis Plant
+Electrolysis Plant->Hydrogen Storage
+Electrolysis Plant->Seawater Intake
+Hydrogen Storage->VLK Unit

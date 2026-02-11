@@ -1,0 +1,32 @@
+// The Standard Wardley View
+//
+// The canonical Wardley map style: positioned circles, dependency
+// lines, evolution axis.  This is the format Simon Wardley uses,
+// and what most practitioners expect to see.
+//
+// STORM's core value chain in the standard presentation.  Read it
+// top-to-bottom (user need to deep infrastructure) and left-to-right
+// (novel to commodity).
+//
+// The standard view is what gets shown at the volcano-side board
+// meeting.  It's the common language of the practice.
+
+title VLK Strategic Overview
+
+style wardley
+
+anchor Shipping Line [0.95, 0.58]
+
+component Traction on Demand [0.82, 0.45]
+component VLK Unit [0.70, 0.25]
+component Service Ship [0.58, 0.48]
+component Hydrogen Supply [0.45, 0.62]
+component Seawater Electrolysis [0.32, 0.78]
+component Weather Forecasting [0.62, 0.65]
+
+Shipping Line->Traction on Demand
+Traction on Demand->VLK Unit
+VLK Unit->Service Ship
+VLK Unit->Weather Forecasting
+Service Ship->Hydrogen Supply
+Hydrogen Supply->Seawater Electrolysis

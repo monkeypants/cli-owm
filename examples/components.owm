@@ -1,0 +1,28 @@
+// Anatomy of a Value Chain
+//
+// A VLK is not one thing — it's an envelope, an autopilot, a tether,
+// a fuel system, and a satellite link, each at a different stage of
+// maturity.  Breaking a capability into positioned components is how
+// you turn a vague "we need kites" into a map you can act on.
+//
+// Standing order from Engineering: "platform" is not a component —
+// it's a label hiding six things that evolve at different speeds.
+// Decompose or be surprised.
+
+title VLK Unit Anatomy
+
+anchor Traction on Demand [0.95, 0.55]
+
+component VLK Envelope [0.82, 0.30] label [-85, 4]
+component Hydrogen Fill [0.70, 0.48] label [10, -20]
+component Carbon Fibre Spars [0.58, 0.68]
+component AI Autopilot [0.75, 0.18] label [-78, 4]
+component Tether System [0.62, 0.38] label [-82, 4]
+component Satellite Uplink [0.45, 0.72] label [10, -20]
+
+Traction on Demand->VLK Envelope
+VLK Envelope->Hydrogen Fill
+VLK Envelope->Carbon Fibre Spars
+VLK Envelope->AI Autopilot
+VLK Envelope->Tether System
+AI Autopilot->Satellite Uplink

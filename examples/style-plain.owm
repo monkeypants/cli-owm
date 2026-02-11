@@ -1,0 +1,36 @@
+// The Internal Briefing
+//
+// STORM HR's henchman onboarding process, rendered in plain style.
+// Process maps serve a purpose — they document sequence and dependency.
+// But they are not strategy.  Nothing on this map has an evolution axis
+// or a competitive position.  It's a checklist, not a landscape.
+//
+// If the "strategy map" looks like a process diagram, someone mapped
+// the how without asking where each capability sits in its evolution.
+// Plain style is fine for HR Form HR-7734; for actual strategy,
+// you need positioning.
+
+title New Henchman Onboarding
+
+style plain
+
+// STORM Human Resources — form HR-7734
+// Please allow 6-8 weeks for processing.
+
+anchor HR Department [0.95, 0.55]
+
+component NDA Signing [0.88, 0.82]
+component Background Check [0.82, 0.75]
+component Uniform Fitting [0.78, 0.50]
+component Evil Orientation [0.65, 0.35]
+component Lair Access Badge [0.50, 0.62]
+component Monologue Training [0.40, 0.25]
+component Escape Route Memorisation [0.35, 0.45]
+
+HR Department->NDA Signing
+HR Department->Background Check
+HR Department->Uniform Fitting
+Uniform Fitting->Evil Orientation
+Evil Orientation->Monologue Training
+Evil Orientation->Lair Access Badge
+Lair Access Badge->Escape Route Memorisation

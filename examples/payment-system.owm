@@ -1,0 +1,42 @@
+// A Complete Strategic Analysis
+//
+// STORM's traction-on-demand billing system in one map: pipeline of
+// pricing models (dynamic, fixed contract, spot market), inertia on
+// legacy payment rails, an evolution target to modernise, and an
+// annotation calling out the friction.
+//
+// A deep map of one value chain reveals more than a shallow map
+// of the entire organisation.  Pipeline, evolution, inertia, and
+// annotation working together — this is what a focused strategic
+// analysis looks like.
+
+title Traction on Demand Billing
+
+style wardley
+
+anchor Shipping Line [0.95, 0.58]
+component Traction Request [0.82, 0.45]
+component Pricing Engine [0.70, 0.50]
+component VLK Dispatch [0.65, 0.28]
+component Weather Routing [0.55, 0.38]
+
+// Pipeline of pricing maturity variants
+pipeline Pricing Engine
+{
+  component Dynamic Pricing [0.35]
+  component Fixed Contract [0.62]
+  component Spot Market [0.80]
+}
+
+// Legacy payment processing resists evolution
+component Payment Processing [0.48, 0.75] inertia
+evolve Payment Processing 0.88
+
+Shipping Line->Traction Request
+Traction Request->Pricing Engine
+Traction Request->VLK Dispatch
+VLK Dispatch->Weather Routing
+Pricing Engine->Payment Processing
+
+note Uber-like demand model [0.78, 0.62]
+annotation 1 [[0.46, 0.77]] Legacy payment rails create friction

@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cli-owm Examples</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #f5f5f5; color: #333;
+    padding: 2rem; line-height: 1.6;
+  }
+  header {
+    max-width: 800px; margin: 0 auto 3rem;
+    text-align: center;
+  }
+  header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+
+  .intro {
+    max-width: 800px; margin: 0 auto 3rem;
+    background: #fff; border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    padding: 2rem;
+  }
+  .intro p { margin-bottom: 1rem; }
+  .intro p:last-child { margin-bottom: 0; }
+  .intro code { background: #f0f0f0; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+
+  .reading-guide {
+    max-width: 800px; margin: 0 auto 3rem;
+    background: #fff; border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    padding: 2rem;
+    border-left: 4px solid #6b7b8d;
+  }
+  .reading-guide h2 { font-size: 1.1rem; margin-bottom: 1rem; color: #444; }
+  .reading-guide p { margin-bottom: 0.75rem; font-size: 0.92rem; }
+  .reading-guide p:last-child { margin-bottom: 0; }
+  .reading-guide strong { color: #333; }
+
+  .section {
+    max-width: 1600px; margin: 0 auto 3rem;
+  }
+  .section-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #ddd;
+  }
+  .section-header h2 {
+    font-size: 1.4rem; font-weight: 600;
+    color: #222;
+  }
+  .section-header p {
+    color: #555; margin-top: 0.5rem; font-size: 0.95rem;
+    max-width: 800px;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+    gap: 1.5rem;
+  }
+  .card {
+    background: #fff; border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    overflow: hidden; transition: box-shadow 0.2s;
+  }
+  .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+  .card a { display: block; text-decoration: none; color: inherit; }
+  .card .card-header {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #eee;
+  }
+  .card .card-header h3 {
+    font-size: 0.95rem; font-weight: 600; margin-bottom: 0.15rem;
+  }
+  .card .card-header .filename {
+    font-size: 0.75rem; color: #999; font-family: ui-monospace, monospace;
+  }
+  .card .preview {
+    padding: 1rem; background: #fafafa;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .card .preview img { max-width: 100%; height: auto; }
+  .card .narrative {
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #eee;
+    font-size: 0.82rem;
+    color: #555;
+    line-height: 1.55;
+  }
+  .card .narrative p { margin-bottom: 0.5rem; }
+  .card .narrative p:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Examples</h1>
+</header>
+
+<!-- Your First Map -->
+<div class="section">
+  <div class="gallery">
+    <div class="card"><a href="lair-canteen.svg">
+      <div class="card-header"><h3>The Henchman Canteen</h3><div class="filename">lair-canteen.owm</div></div>
+      <div class="preview"><img src="lair-canteen.svg" alt="lair-canteen"></div>
+      <div class="narrative">
+        <p>
+	  The volcano lair canteen serves one thing: minestrone.
+	  It is surprisingly good.
+	  The recipe is classified (see NDA section 7).
+	  This map is a direct value chain from stakeholder need to deep infrastructure:
+	  the Mandatory Fun Committee mandates morale, henchmen consume minestrone,
+	  and the minestrone depends on broth, bowls,
+	  and a volcanic cauldron heated by lava vents.
+	</p>
+        <p>
+	  Even the simplest value chain reveals evolution.
+	  The cauldron is Custom-Built - bespoke volcanic plumbing.
+	  Evolving it to a geothermal tap commoditises the heat source
+	  and frees the kitchen to focus on what actually differentiates: the recipe.
+	</p>
+      </div>
+    </a></div>
+
+  </div>
+</div>
+
+<!-- The Map -->
+<div class="section">
+  <div class="section-header">
+    <h2>The Map</h2>
+    <p>What a Wardley map is, how to read it, and why positioning matters.</p>
+  </div>
+  <div class="gallery">
+
+    <div class="card"><a href="minimal.svg">
+      <div class="card-header"><h3>Every Map Starts With a Need</h3><div class="filename">minimal.owm</div></div>
+      <div class="preview"><img src="minimal.svg" alt="minimal"></div>
+      <div class="narrative">
+        <p>
+	  A shipping line needs traction.
+	  This is provided by Very Large Kites (VLK Units),
+	  autonomous dirigible kites.
+	  That's the entire value proposition in three nodes:
+	  a user, a need, and the capability that fulfils it.
+	</p>
+        <p>
+	  If you can't name who needs it, you don't have a strategy;
+	  you have a technology looking for a problem.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="components.svg">
+      <div class="card-header"><h3>Anatomy of a Value Chain</h3><div class="filename">components.owm</div></div>
+      <div class="preview"><img src="components.svg" alt="components"></div>
+      <div class="narrative">
+        <p>
+	  A VLK is not one thing - it's an envelope, an autopilot,
+	  a tether, a fuel system, and a satellite link,
+	  each at a different stage of maturity.
+	  Breaking a capability into positioned components
+	  is how you turn a vague "we need kites"
+	  into a map you can act on.
+	</p>
+        <p>
+	  Standing order from Engineering:
+	  "platform" is not a component - it's a label
+	  hiding six things that evolve at different speeds.
+	  Decompose or be surprised.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="anchors.svg">
+      <div class="card-header"><h3>Who Are You Serving?</h3><div class="filename">anchors.owm</div></div>
+      <div class="preview"><img src="anchors.svg" alt="anchors"></div>
+      <div class="narrative">
+        <p>Three stakeholders pulling on the same value chain:
+	  shipping lines want cheap traction,
+	  the Supreme Leader wants a flying sailboat,
+	  and maritime regulators want safety compliance.
+	  Each anchor distorts priorities differently.
+	</p>
+        <p>
+	  A map with one user is a map with one opinion.
+	  Multiple anchors reveal the political forces
+	  that shape every technical decision.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="comments.svg">
+      <div class="card-header"><h3>Documenting Strategic Assumptions</h3><div class="filename">comments.owm</div></div>
+      <div class="preview"><img src="comments.svg" alt="comments"></div>
+      <div class="narrative">
+        <p>
+	  This map was presented at the Q2 volcano-side offsite.
+	  Comments should capture WHY things are where they are,
+	  not describe the DSL syntax.
+	  Future readers of this map need to know what the team believed,
+	  not what the parser does.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="defaults.svg">
+      <div class="card-header"><h3>The Danger of Unmapped Strategy</h3><div class="filename">defaults.owm</div></div>
+      <div class="preview"><img src="defaults.svg" alt="defaults"></div>
+      <div class="narrative">
+        <p>
+	  At the Monday all-hands,
+	  the Supreme Leader rattled off half a dozen agenda items.
+	  Nobody bothered to position them on the map.
+	  The parser defaults unpositioned elements to [0.9, 0.1]
+	  - watch them clump in the upper left,
+	  a visual symptom of unstrategy.
+	</p>
+        <p>
+	  When everything clumps at the same coordinates,
+	  nobody has thought about where things actually sit.
+	  Clustering is the smell of a planning meeting
+	  that skipped the hard questions.
+	</p>
+      </div>
+    </a></div>
+
+  </div>
+</div>
+
+<!-- Evolution -->
+<div class="section">
+  <div class="section-header">
+    <h2>Evolution</h2>
+    <p>The axis that makes a Wardley map different from any other dependency graph.</p>
+  </div>
+  <div class="gallery">
+
+    <div class="card"><a href="evolution-labels.svg">
+      <div class="card-header"><h3>How Activities Evolve</h3><div class="filename">evolution-labels.owm</div></div>
+      <div class="preview"><img src="evolution-labels.svg" alt="evolution-labels"></div>
+      <div class="narrative">
+        <p>
+	  Wardley's evolution axis maps how activities mature:
+	  from Genesis (novel, uncertain) through Custom and Product
+	  to Commodity (stable, industrialised).
+	  Each stage changes how you compete, how you source,
+	  and how you organise the team that owns it.
+	</p>
+        <p>
+	  The value chain spans the full spectrum.
+	  VLK Units are Genesis - nobody else builds autonomous traction kites.
+	  Seawater electrolysis is approaching Commodity - the chemistry is well understood.
+	  If every component sits in one stage,
+	  someone is either lying about positioning or we have a portfolio problem.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="evolution-labels-practices.svg">
+      <div class="card-header"><h3>How Practices Mature</h3><div class="filename">evolution-labels-practices.owm</div></div>
+      <div class="preview"><img src="evolution-labels-practices.svg" alt="evolution-labels-practices"></div>
+      <div class="narrative">
+        <p>
+	  Activities aren't the only things that evolve - practices do too.
+	  A Novel practice differentiates you; a Best practice commoditises.
+	  Explosive tired-kite decommissioning is still Novel (nobody else does it).
+	  Hydrogen replenishment is approaching Best - the procedures are documented
+	  and repeatable across the fleet.
+	</p>
+        <p>
+	  When a practice becomes Best,
+	  it stops being a competitive weapon.
+	  Invest in Novel practices, and let Best practices run on process discipline.
+	  Fund accordingly.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="evolution-labels-data.svg">
+      <div class="card-header"><h3>How Data Becomes an Asset</h3><div class="filename">evolution-labels-data.owm</div></div>
+      <div class="preview"><img src="evolution-labels-data.svg" alt="evolution-labels-data"></div>
+      <div class="narrative">
+        <p>
+	  Data evolves from Unmodelled (raw, inconsistent)
+	  through Divergent and Convergent
+	  to Modelled (structured, standardised, API-accessible).
+	  Traction demand signals are Divergent - collected but not yet standardised.
+	  Atmospheric pressure data is Modelled - it comes from commodity weather APIs.
+	</p>
+        <p>
+	  Unmodelled data is a strategic liability.
+	  Modelled data is an operational utility.
+	  The transition from Divergent to Convergent is where we decide
+	  whether data becomes a weapon or just another line item on the maintenance budget.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="evolution-labels-knowledge.svg">
+      <div class="card-header"><h3>How Knowledge Matures</h3><div class="filename">evolution-labels-knowledge.owm</div></div>
+      <div class="preview"><img src="evolution-labels-knowledge.svg" alt="evolution-labels-knowledge"></div>
+      <div class="narrative">
+        <p>
+	  Knowledge evolves from Concept
+	  through Hypothesis and Theory to Accepted.
+	  R&D risk follows this curve:
+	  autonomous kite control is still at the Concept - unproven and expensive.
+	  Kite aerodynamics is Accepted science, low risk.
+	</p>
+        <p>
+	  R&D spend concentrates at the Concept end.
+	  If the lab is spending research budget on Accepted knowledge,
+	  they're doing engineering, not research - reorganise accordingly.
+	</p>
+      </div>
+    </a></div>
+
+  </div>
+</div>
+
+<!-- Styles -->
+<div class="section">
+  <div class="section-header">
+    <h2>Styles</h2>
+    <p>
+      Five ways to render the same strategic landscape.
+      Context determines which style communicates best.
+    </p>
+  </div>
+  <div class="gallery">
+
+    <div class="card"><a href="style-handwritten.svg">
+      <div class="card-header"><h3>The Napkin Sketch</h3><div class="filename">style-handwritten.owm</div></div>
+      <div class="preview"><img src="style-handwritten.svg" alt="style-handwritten"></div>
+      <div class="narrative">
+        <p>
+	  The original pitch,
+	  sketched on a napkin at a harbour bar.
+	  Now framed in breakout room B.
+	  Every strategy starts messy, visionary, and incomplete.
+	  The handwritten style is honest about that - it says "this is a hypothesis, not a plan"
+	</p>
+        <p>
+	  The first map of any new initiative should look exactly this rough.
+	  If the first draft is polished, someone drew what they wanted to see
+	  rather than what they actually know.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="style-wardley.svg">
+      <div class="card-header"><h3>The Standard Wardley View</h3><div class="filename">style-wardley.owm</div></div>
+      <div class="preview"><img src="style-wardley.svg" alt="style-wardley"></div>
+      <div class="narrative">
+        <p>
+	  The canonical Wardley map style:
+	  positioned circles, dependency lines, evolution axis.
+	  This is the format Simon Wardley uses,
+	  and what most practitioners expect to see.
+	</p>
+        <p>
+	  Core value chain in the standard presentation.
+	  Read it top-to-bottom (user need to deep infrastructure)
+	  and left-to-right (novel to commodity).
+	  The standard view is what gets shown at the volcano-side board meeting.
+	  It's the common language of the practice.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="style-plain.svg">
+      <div class="card-header"><h3>The Internal Briefing</h3><div class="filename">style-plain.owm</div></div>
+      <div class="preview"><img src="style-plain.svg" alt="style-plain"></div>
+      <div class="narrative">
+        <p>
+	  The henchman onboarding process, rendered in plain style.
+	  Process maps serve a purpose - they document sequence and dependency.
+	  But they are not strategy.
+	  Nothing on this map has an evolution axis or a competitive position.
+	  It's a checklist, not a landscape.
+	</p>
+        <p>
+	  If the "strategy map" looks like a process diagram,
+	  someone mapped the how without asking where each capability sits in its evolution.
+	  Plain style is fine for HR Form HR-7734; for actual strategy, you need positioning.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="style-dark.svg">
+      <div class="card-header"><h3>The Risk Assessment</h3><div class="filename">style-dark.owm</div></div>
+      <div class="preview"><img src="style-dark.svg" alt="style-dark"></div>
+      <div class="narrative">
+        <p>
+	  VLK end-of-life.
+	  When structural fatigue makes a kite unviable,
+	  controlled ignition of the hydrogen envelope provides efficient atmospheric disposal.
+	  Safe, spectacular, and fully documented.
+	  The dark style is for this sort of thing - decommissioning, risk, end-of-life.
+	</p>
+        <p>
+	  Every component eventually reaches end of life.
+	  Dark-themed maps frame the conversation around what's being retired,
+	  not what's being built.
+	  Useful for sunset planning, budget reviews, and controlled explosions.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="style-colour.svg">
+      <div class="card-header"><h3>The Closed Loop</h3><div class="filename">style-colour.owm</div></div>
+      <div class="preview"><img src="style-colour.svg" alt="style-colour"></div>
+      <div class="narrative">
+        <p>
+	  The VLK-service ship hydrogen cycle is a closed loop: the kite provides traction,
+	  the service ship converts that traction into hydrogen via submerged turbines,
+	  and the hydrogen feeds back up to the kite.
+	  The kite pays for its own upkeep with wind energy.
+	  Colour style highlights the circular dependency structure.
+	</p>
+        <p>
+	  Circular value chains are rare and powerful.
+	  The Rival Villain Consortium can't replicate this loop
+	  by buying components - it's a structural advantage
+	  baked into the physics of the operation.
+	  Protect it.
+	</p>
+      </div>
+    </a></div>
+
+  </div>
+</div>
+
+<!-- Movement -->
+<div class="section">
+  <div class="section-header">
+    <h2>Movement</h2>
+    <p>Everything evolves. Some things resist. External forces shape the pace.</p>
+  </div>
+  <div class="gallery">
+
+    <div class="card"><a href="evolution.svg">
+      <div class="card-header"><h3>Everything Evolves</h3><div class="filename">evolution.owm</div></div>
+      <div class="preview"><img src="evolution.svg" alt="evolution"></div>
+      <div class="narrative">
+        <p>
+	  Components move rightward over time.
+	  The VLK Prototype is Genesis today,
+	  but the plan is to evolve it to a Production VLK
+	  (Custom-Built, manufactured at scale).
+	  Evolution changes everything: sourcing model, team structure, competitive dynamics.
+	</p>
+        <p>
+	  Standing order from the Q2 offsite: if nothing on the map is evolving,
+	  either the market is truly static (unlikely) or the map is out of date.
+	  Update it or face Questions.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="evolve-combined.svg">
+      <div class="card-header"><h3>The Technology Roadmap</h3><div class="filename">evolve-combined.owm</div></div>
+      <div class="preview"><img src="evolve-combined.svg" alt="evolve-combined"></div>
+      <div class="narrative">
+        <p>
+	  Project Thunderkite: R&D evolution targets,
+	  approved at the Q2 offsite (volcano-side breakout room B).
+	  Each evolve line is a strategic decision.
+	  Kite Prototype outsources at scale because we can't manufacture fast enough.
+	  Control Software buys an AI Autopilot from a disreputable vendor
+	  because building in-house would take three more years.
+	</p>
+        <p>
+	  A technology roadmap without evolution targets is just a shopping list.
+	  Each arrow must answer: who will supply this at the next stage,
+	  and what capability do we lose or gain?
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="inertia.svg">
+      <div class="card-header"><h3>Why Incumbents Fail to Adapt</h3><div class="filename">inertia.owm</div></div>
+      <div class="preview"><img src="inertia.svg" alt="inertia"></div>
+      <div class="narrative">
+        <p>
+	  The shipping industry runs on bunker fuel.
+	  Bunker fuel propulsion, fuel supply chains,
+	  port bunkering infrastructure - decades of investment create structural resistance to change.
+	  This is inertia: the tendency of existing systems to resist evolution
+	  even when better alternatives exist.
+	  The opportunity exists precisely because of this inertia.
+	</p>
+        <p>
+	  Inertia is not always the enemy.
+	  Our own inertia protects the lair's infrastructure investments in stable operations.
+	  But when the landscape shifts, the same inertia becomes a trap.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="accelerators.svg">
+      <div class="card-header"><h3>Reading the Climate</h3><div class="filename">accelerators.owm</div></div>
+      <div class="preview"><img src="accelerators.svg" alt="accelerators"></div>
+      <div class="narrative">
+        <p>
+	  Evolution doesn't happen in a vacuum.
+	  External forces accelerate or decelerate the pace of change.
+	  Rising fuel costs and carbon shipping levies push shipping lines toward wind traction faster.
+	  Maritime regulation inertia and port infrastructure lock-in slow the transition down.
+	</p>
+        <p>
+	  The leader reads the climate daily.
+	  Accelerators create urgency; decelerators create breathing room.
+	  Strategy is partly about choosing which forces to amplify and which to resist.
+	</p>
+      </div>
+    </a></div>
+
+  </div>
+</div>
+
+<!-- Flows -->
+<div class="section">
+  <div class="section-header">
+    <h2>Flows</h2>
+    <p>Not all relationships are the same. Dependencies differ from value flows.</p>
+  </div>
+  <div class="gallery">
+
+    <div class="card"><a href="links-and-flows.svg">
+      <div class="card-header"><h3>Dependencies vs. Value Flows</h3><div class="filename">links-and-flows.owm</div></div>
+      <div class="preview"><img src="links-and-flows.svg" alt="links-and-flows"></div>
+      <div class="narrative">
+        <p>
+	  Not all lines on a map mean the same thing.
+	  A dependency link (A->B) says "A needs B to function."
+	  A flow (A+>B) says "value moves from A to B."
+	  The VLK-service ship relationship has both:
+	  structural dependency and bidirectional exchange
+	  of traction, hydrogen, and maintenance.
+	</p>
+        <p>
+	  If every line on the map is a simple arrow,
+	  the economic structure is hidden.
+	  Flows reveal where value actually moves - which is often not the same direction
+	  as the dependency chain.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="flow-labels.svg">
+      <div class="card-header"><h3>Follow the Money</h3><div class="filename">flow-labels.owm</div></div>
+      <div class="preview"><img src="flow-labels.svg" alt="flow-labels"></div>
+      <div class="narrative">
+        <p>
+	  All flows must be approved by Finance.
+	  Labelled flows reveal the economic structure:
+	  traction fees flow from shipping lines to Commercial,
+	  laundered funds circulate through offshore accounts and shell corporations,
+	  and the Stolen Art Vault serves as collateral for kite parts.
+	</p>
+        <p>
+	  Data, money, requests, and laundered funds move differently through a value chain.
+	  Unlabelled arrows hide the question: what exactly is flowing here?
+	</p>
+      </div>
+    </a></div>
+
+  </div>
+</div>
+
+<!-- Strategic Decisions -->
+<div class="section">
+  <div class="section-header">
+    <h2>Strategic Decisions</h2>
+    <p>
+      Sourcing, pipelines, markets, and ecosystems - the moves that follow from positioning.
+    </p>
+  </div>
+  <div class="gallery">
+
+    <div class="card"><a href="build-buy-outsource.svg">
+      <div class="card-header"><h3>Sourcing Follows Evolution</h3><div class="filename">build-buy-outsource.owm</div></div>
+      <div class="preview"><img src="build-buy-outsource.svg" alt="build-buy-outsource"></div>
+      <div class="narrative">
+        <p>
+	  Sourcing strategy maps directly to evolution.
+	  The Hydrogen Envelope is Genesis - nobody sells dirigible-grade envelopes,
+	  so we build it in-house.
+	  Avionics are a mature Product - buy off the shelf.
+	  Cloud Hosting is Commodity - outsource to a provider.
+	  The Tether System shows a sourcing pivot:
+	  built in-house today but evolving toward a buy decision as the market matures.
+	</p>
+        <p>
+	  The rule is simple: Genesis means build (no alternative exists),
+	  Product means buy (a competitive market exists),
+	  Commodity means outsource (it's a utility).
+	  If sourcing doesn't match evolution, someone is either overspending or underinvesting.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="pipeline.svg">
+      <div class="card-header"><h3>Managing Across Maturities</h3><div class="filename">pipeline.owm</div></div>
+      <div class="preview"><img src="pipeline.svg" alt="pipeline"></div>
+      <div class="narrative">
+        <p>
+	  Not one kite but a portfolio.
+	  Prototype Kite (Genesis, R&D), Production Kite (Custom, fleet workhorse),
+	  and Mega Kite (Product, primary revenue).
+	  A pipeline shows components at different evolution stages within a single capability.
+	</p>
+        <p>
+	  Each variant needs different management, funding, and team culture.
+	  Do not run R&D and fleet ops with the same playbook.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="market-ecosystem.svg">
+      <div class="card-header"><h3>Where Markets Form</h3><div class="filename">market-ecosystem.owm</div></div>
+      <div class="preview"><img src="market-ecosystem.svg" alt="market-ecosystem"></div>
+      <div class="narrative">
+        <p>
+	  Markets emerge around commoditising components.
+	  As fuel alternatives mature, a market forms - multiple suppliers compete,
+	  prices fall, and regulation accelerates the transition.
+	  Traction-on-demand service is positioned to capture this emerging market.
+	</p>
+        <p>
+	  Watch for components moving from Custom to Product.
+	  That transition is where markets form and where we must decide:
+	  supplier, consumer, or platform.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="market-decorators.svg">
+      <div class="card-header"><h3>Positioning in the Landscape</h3><div class="filename">market-decorators.owm</div></div>
+      <div class="preview"><img src="market-decorators.svg" alt="market-decorators"></div>
+      <div class="narrative">
+        <p>
+	  Markets, ecosystems, and sourcing decorators position us within the broader competitive landscape.
+	  Maritime Traction is a market we are creating.
+	  The Shipping Industry is an ecosystem we participate in but don't control.
+	  Combined decorators (market + buy) show both the market context and
+	  our sourcing posture.
+	</p>
+        <p>
+	  Distinguish between markets we are creating,
+	  markets we are buying from, and ecosystems we are embedded in.
+	  Each requires a different strategic posture - and a different memo template.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="ecosystem.svg">
+      <div class="card-header"><h3>Mapping the Wider Ecosystem</h3><div class="filename">ecosystem.owm</div></div>
+      <div class="preview"><img src="ecosystem.svg" alt="ecosystem"></div>
+      <div class="narrative">
+        <p>
+	  We don't operate in a vacuum.
+	  Black Market Arms Dealers naturally provide components
+	  unavailable through legitimate channels.
+	  The Corrupt Officials Network smooths regulatory friction.
+	  The Rival Villain Consortium competes for the same orbital mirror technology.
+	  These are external actors we influence but don't control.
+	</p>
+        <p>
+	  A map showing only internal components is planning in a bubble.
+	  We map suppliers, regulators, competitors, and the Rival Villain Consortium.
+	  The bubble always pops. Best to know what's outside it beforehand.
+	</p>
+      </div>
+    </a></div>
+
+  </div>
+</div>
+
+<!-- Organisation and Communication -->
+<div class="section">
+  <div class="section-header">
+    <h2>Organisation and Communication</h2>
+    <p>Structure follows strategy. Maps must communicate.</p>
+  </div>
+  <div class="gallery">
+
+    <div class="card"><a href="pst.svg">
+      <div class="card-header"><h3>Pioneers, Settlers, and Town Planners</h3><div class="filename">pst.owm</div></div>
+      <div class="preview"><img src="pst.svg" alt="pst"></div>
+      <div class="narrative">
+        <p>
+	  Wardley's PST model matches team culture to component evolution.
+	  Pioneers explore Genesis - they thrive on uncertainty
+	  and build things nobody has built before (Flying Sailboat Research).
+	  Settlers take prototypes and turn them into products
+	  (VLK Fleet Deployment).
+	  Town Planners industrialise mature components
+	  into utilities (Hydrogen Commodity Supply).
+	</p>
+        <p>
+	  Put Town Planners on Flying Sailboat Research
+	  and they'll want requirements that don't exist yet.
+	  Put Pioneers on hydrogen commodity supply
+	  and they'll re-architect things that work fine.
+	  Match the team to the evolution stage.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="submaps.svg">
+      <div class="card-header"><h3>Decomposing Complexity</h3><div class="filename">submaps.owm</div></div>
+      <div class="preview"><img src="submaps.svg" alt="submaps"></div>
+      <div class="narrative">
+        <p>
+	  The leader sees three boxes:
+	  VLK Programme, Fleet Operations, and Commercial Division.
+	  Each box links to a detailed sub-map
+	  where the relevant team works at a finer grain.
+	  Different stakeholders need different zoom levels -
+	  the board sees the overview,
+	  the engineering lead sees component-level evolution targets.
+	</p>
+        <p>
+	  If the map has more than 15-20 components, decompose.
+	  Sub-maps let teams own their section of the landscape
+	  while the leader maintains the strategic overview.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="notes.svg">
+      <div class="card-header"><h3>Strategic Observations</h3><div class="filename">notes.owm</div></div>
+      <div class="preview"><img src="notes.svg" alt="notes"></div>
+      <div class="narrative">
+        <p>
+	  Notes are lightweight annotations - observations, assumptions,
+	  and forward-looking bets that don't belong in the value chain structure
+	  but need to be visible on the map.
+	  The + prefix makes a note visually prominent (highlighted).
+	  Use it for the most important strategic observation on the map.
+	</p>
+        <p>
+	  Notes capture what the team believes but hasn't proven
+	  - the hypotheses that should be tested next.
+	  A map without notes is a map without questions.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="annotations.svg">
+      <div class="card-header"><h3>Telling the Story</h3><div class="filename">annotations.owm</div></div>
+      <div class="preview"><img src="annotations.svg" alt="annotations"></div>
+      <div class="narrative">
+        <p>
+	  A map is not self-explanatory.
+	  Annotations turn a diagram into a narrative:
+	  numbered callouts that walk the reader through the strategic argument.
+	  The annotation box collects them into a legend.
+	  Multi-coordinate annotations can highlight relationships between components.
+	</p>
+        <p>
+	  When presenting to the board, add 3-5 annotations
+	  that tell the strategic story.
+	  Without them, the audience sees structure but misses the argument
+	  - and the Q&A will not go well.
+	</p>
+      </div>
+    </a></div>
+
+    <div class="card"><a href="payment-system.svg">
+      <div class="card-header"><h3>A Complete Strategic Analysis</h3><div class="filename">payment-system.owm</div></div>
+      <div class="preview"><img src="payment-system.svg" alt="payment-system"></div>
+      <div class="narrative">
+        <p>
+	  The traction-on-demand billing system in one map:
+	  pipeline of pricing models (dynamic, fixed contract, spot market),
+	  inertia on legacy payment rails,
+	  an evolution target to modernise,
+	  and an annotation calling out the friction.
+	</p>
+        <p>
+	  A deep map of one value chain reveals more
+	  than a shallow map of the entire organisation.
+	  This is what a focused strategic analysis looks like
+	  - not the whole empire, but one domain mapped thoroughly.
+	</p>
+      </div>
+    </a></div>
+
+  </div>
+</div>
+
+<!-- The Full Picture -->
+<div class="section">
+  <div class="section-header">
+    <h2>The Full Picture</h2>
+    <p>Every concept combined in one map - the capstone.</p>
+  </div>
+  <div class="gallery">
+
+    <div class="card"><a href="comprehensive.svg">
+      <div class="card-header"><h3>Strategic Overview</h3><div class="filename">comprehensive.owm</div></div>
+      <div class="preview"><img src="comprehensive.svg" alt="comprehensive"></div>
+      <div class="narrative">
+        <p>
+	  The capstone: every concept combined in one map.
+	  Value chain anchors, evolution labels, pipeline, sourcing decorators,
+	  flows, annotations, PST overlays, accelerators, and a strategic note.
+	  This is what a mature Wardley map looks like
+	  - dense but readable, with every element earning its place.
+	</p>
+        <p>
+	  Nobody builds a map this complete on day one.
+	  Start with a user and a need,
+	  then add layers as the strategic picture sharpens.
+	</p>
+      </div>
+    </a></div>
+
+  </div>
+</div>
+
+<!-- Quality -->
+<div class="section">
+  <div class="section-header">
+    <h2>Quality</h2>
+    <p>Map your own infrastructure. Even test suites are value chains.</p>
+  </div>
+  <div class="gallery">
+
+    <div class="card"><a href="test-architecture.svg">
+      <div class="card-header"><h3>Mapping the Quality Infrastructure</h3><div class="filename">test-architecture.owm</div></div>
+      <div class="preview"><img src="test-architecture.svg" alt="test-architecture"></div>
+      <div class="narrative">
+        <p>
+	  This map describes the test suite
+	  that verifies the tool that renders this map.
+	  The recursion is intentional.
+	  Quality infrastructure is a value chain.
+	  The developer needs confidence;
+	  confidence depends on tests;
+	  tests depend on components at different stages of maturity.
+	</p>
+        <p>
+	  The components that give the most confidence
+	  are often the ones least understood.
+	  What in the quality infrastructure is genesis and what is commodity?
+	  This map answers that question about itself.
+	</p>
+      </div>
+    </a></div>
+
+  </div>
+</div>
+
+<!-- Bonus -->
+<div class="section">
+  <div class="section-header">
+    <h2>Bonus</h2>
+  </div>
+  <div class="gallery">
+
+    <div class="card"><a href="lair-canteen-sized.svg">
+      <div class="card-header"><h3>Custom Canvas Dimensions</h3><div class="filename">lair-canteen-sized.owm</div></div>
+      <div class="preview"><img src="lair-canteen-sized.svg" alt="lair-canteen-sized"></div>
+      <div class="narrative">
+        <p>
+	  The same canteen map with a custom canvas size.
+	  Useful for embedding in presentations or documents
+	  where the default dimensions don't fit.
+	</p>
+      </div>
+    </a></div>
+
+  </div>
+</div>
+
+</body>
+</html>

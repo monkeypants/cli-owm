@@ -1,0 +1,32 @@
+// Documenting Strategic Assumptions
+//
+// This map was presented at the Q2 volcano-side offsite.
+// Comments should capture WHY things are where they are,
+// not describe the DSL syntax.  Future readers of this map
+// need to know what the team believed, not what the parser does.
+
+title VLK Fleet Operations
+
+/* The core operational loop for a deployed VLK unit at sea.
+   Traction on Demand is positioned as a Product — STORM has
+   real customers, but the offering isn't yet commodity.
+   Hydrogen Supply sits in Custom-Built because the seawater
+   electrolysis rigs are bespoke to the service ship design. */
+
+anchor Shipping Line [0.95, 0.55]
+
+// Visible to the customer — this is what they're paying for
+component Traction on Demand [0.82, 0.45]
+
+component VLK Unit [0.70, 0.28]
+component Service Ship [0.58, 0.50]
+
+// Any dependency requiring custom engineering is a strategic risk —
+// it can't be easily replaced or scaled.  The lair learned this
+// the hard way with Hydrogen Supply.
+component Hydrogen Supply [0.45, 0.38] // custom engineering = strategic risk
+
+Shipping Line->Traction on Demand
+Traction on Demand->VLK Unit
+VLK Unit->Service Ship
+Service Ship->Hydrogen Supply

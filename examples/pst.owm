@@ -1,0 +1,41 @@
+// Pioneers, Settlers, and Town Planners
+//
+// Wardley's PST model matches team culture to component evolution.
+// Pioneers explore Genesis — they thrive on uncertainty and build
+// things nobody has built before (Flying Sailboat Research).  Settlers
+// take prototypes and turn them into products (VLK Fleet Deployment).
+// Town Planners industrialise mature components into utilities
+// (Hydrogen Commodity Supply).
+//
+// Put Town Planners on Flying Sailboat Research and they'll want
+// requirements that don't exist yet.  Put Pioneers on hydrogen
+// commodity supply and they'll re-architect things that work fine.
+// Match the team to the evolution stage.
+
+title STORM Organisation Roles
+
+anchor Supreme Leader [0.97, 0.50]
+
+component Flying Sailboat Research [0.82, 0.12]
+component VLK Fleet Deployment [0.70, 0.42]
+component Hydrogen Commodity Supply [0.55, 0.78]
+component Weather Forecasting [0.65, 0.28]
+component Traction Scheduling [0.50, 0.58]
+
+Supreme Leader->Flying Sailboat Research
+Supreme Leader->VLK Fleet Deployment
+VLK Fleet Deployment->Weather Forecasting
+VLK Fleet Deployment->Traction Scheduling
+Traction Scheduling->Hydrogen Commodity Supply
+
+// PST overlays — bounding box form [y1, x1, y2, x2]
+// This syntax draws zone rectangles across the map.
+pioneers [0.90, 0.00, 0.75, 0.25]
+settlers [0.75, 0.25, 0.55, 0.55]
+townplanners [0.55, 0.55, 0.35, 0.95]
+
+// PST overlays — position + pixel dimensions form
+// Equivalent visual result, alternative syntax.
+// pioneers [0.90, 0.05] 100 80
+// settlers [0.70, 0.35] 120 80
+// townplanners [0.50, 0.65] 120 80

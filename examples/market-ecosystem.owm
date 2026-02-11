@@ -1,0 +1,26 @@
+// Where Markets Form
+//
+// Markets emerge around commoditising components.  As fuel alternatives
+// mature, a market forms — multiple suppliers compete, prices fall,
+// and regulation accelerates the transition.  STORM's traction-on-demand
+// service positions it to capture this emerging market.
+//
+// Watch for components moving from Custom to Product.  That
+// transition is where markets form and where STORM must decide:
+// supplier, consumer, or platform.
+
+title Maritime Traction Market
+
+anchor Shipping Line [0.95, 0.58]
+
+component Traction on Demand [0.82, 0.48]
+component VLK Unit [0.70, 0.25]
+component Trade Route Access [0.62, 0.62]
+component Fuel Alternatives [0.55, 0.50] (market)
+
+Shipping Line->Traction on Demand
+Traction on Demand->VLK Unit
+Traction on Demand->Trade Route Access
+Trade Route Access->Fuel Alternatives
+
+note Carbon regulations tightening [0.42, 0.72]

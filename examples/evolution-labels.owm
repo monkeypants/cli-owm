@@ -1,0 +1,32 @@
+// How Activities Evolve
+//
+// Wardley's evolution axis maps how activities mature: from Genesis
+// (novel, uncertain) through Custom and Product to Commodity (stable,
+// industrialised).  Each stage changes how you compete, how you source,
+// and how you organise the team that owns it.
+//
+// STORM's value chain spans the full spectrum.  VLK Units are Genesis —
+// nobody else builds autonomous traction kites.  Seawater electrolysis
+// is approaching Commodity — the chemistry is well understood.
+//
+// Per the Supreme Leader's standing directive: label the axis.  If
+// every component sits in one stage, someone is either lying about
+// positioning or STORM has a portfolio problem.
+
+title VLK Activities Evolution
+
+evolution Genesis->Custom->Product->Commodity
+
+anchor Shipping Line [0.95, 0.58]
+
+component Traction on Demand [0.82, 0.55]
+component VLK Unit [0.70, 0.22]
+component Service Ship [0.55, 0.48]
+component Hydrogen Supply [0.42, 0.65]
+component Seawater Electrolysis [0.30, 0.82]
+
+Shipping Line->Traction on Demand
+Traction on Demand->VLK Unit
+VLK Unit->Service Ship
+Service Ship->Hydrogen Supply
+Hydrogen Supply->Seawater Electrolysis

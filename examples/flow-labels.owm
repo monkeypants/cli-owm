@@ -1,0 +1,45 @@
+// Follow the Money
+//
+// STORM's Q3 funding review.  All flows must be approved by Finance.
+// Labelled flows reveal the economic structure: traction fees flow
+// from shipping lines to Commercial, laundered funds circulate through
+// offshore accounts and shell corporations, and the Stolen Art Vault
+// serves as collateral for kite parts.
+//
+// Memo from Finance: label the flows.  "Data," "money," "requests,"
+// and "laundered funds" move differently through a value chain.
+// Unlabelled arrows hide the question: what exactly is flowing here?
+
+title STORM Annual Budget Flows
+
+anchor Supreme Leader [0.97, 0.50]
+
+component Commercial Division [0.82, 0.55]
+component VLK Programme [0.78, 0.18]
+component Offshore Accounts [0.60, 0.72]
+component Shell Corporations [0.48, 0.85]
+component Henchman Payroll [0.40, 0.55]
+component Shipping Lines [0.88, 0.80]
+component Volcano Lair Maintenance [0.35, 0.40]
+component Stolen Art Vault [0.55, 0.35]
+
+Supreme Leader->Commercial Division
+Supreme Leader->VLK Programme
+Commercial Division->Offshore Accounts
+Offshore Accounts->Shell Corporations
+Shell Corporations->Henchman Payroll
+VLK Programme->Volcano Lair Maintenance
+
+// Labelled forward flow — shipping lines send traction fees to Commercial
+Shipping Lines+'traction fees'>Commercial Division
+
+// Labelled reverse flow — STORM provides weather data to its clients
+Commercial Division+'weather data'<VLK Programme
+
+// Labelled bidirectional flow
+Offshore Accounts+'laundered funds'<>Shell Corporations
+
+// Flow with context annotation
+Stolen Art Vault+>Offshore Accounts; used as collateral for kite parts
+Henchman Payroll+<Shell Corporations; monthly disbursement minus dental
+VLK Programme+<>Volcano Lair Maintenance; shared launch infrastructure

@@ -1,0 +1,43 @@
+// Sourcing Follows Evolution
+//
+// STORM's sourcing strategy maps directly to evolution.  The Hydrogen
+// Envelope is Genesis — nobody sells dirigible-grade envelopes, so STORM
+// builds it in-house.  Avionics are a mature Product — buy off the shelf.
+// Cloud Hosting is Commodity — outsource to a provider.
+//
+// The Tether System shows a sourcing pivot: built in-house today but
+// evolving toward a buy decision as the market matures.
+//
+// The rule is simple: Genesis means build (no alternative exists),
+// Product means buy (a competitive market exists), Commodity means
+// outsource (it's a utility).  If sourcing doesn't match evolution,
+// someone is either overspending or underinvesting.
+
+title VLK Component Sourcing Strategy
+
+anchor Supreme Leader [0.97, 0.50]
+
+// Decorators on components show current sourcing
+component Hydrogen Envelope [0.80, 0.22] (build)
+component Avionics Package [0.70, 0.52] (buy)
+component Cloud Hosting [0.48, 0.82] (outsource)
+
+// Standalone sourcing commands — equivalent syntax
+component Carbon Fibre Spars [0.62, 0.45]
+component Satellite Uplink [0.50, 0.65]
+component Maintenance Tooling [0.42, 0.82]
+build Carbon Fibre Spars
+buy Satellite Uplink
+outsource Maintenance Tooling
+
+// Evolve with a sourcing pivot: build now, buy later
+component Tether System [0.75, 0.30] (build)
+evolve Tether System 0.60 (buy)
+
+Supreme Leader->Hydrogen Envelope
+Supreme Leader->Tether System
+Hydrogen Envelope->Avionics Package
+Avionics Package->Cloud Hosting
+Tether System->Carbon Fibre Spars
+Carbon Fibre Spars->Satellite Uplink
+Satellite Uplink->Maintenance Tooling

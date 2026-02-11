@@ -1,0 +1,50 @@
+// Mapping the Quality Infrastructure
+//
+// This map describes the test suite that verifies the tool that
+// renders this map.  The recursion is intentional.
+//
+// Quality infrastructure is a value chain.  The developer needs
+// confidence; confidence depends on tests; tests depend on
+// components at different stages of maturity.  The creative STORM
+// examples at the bottom left are genesis artefacts — handcrafted,
+// irreducible, and resistant to change because every golden-file
+// snapshot depends on their exact content.  The coordinate functions
+// at the bottom right are pure commodity maths.
+//
+// The components that give the most confidence are often the ones
+// least understood.  What in the quality infrastructure is genesis
+// and what is commodity?  This map answers that question about itself.
+
+title Test Architecture
+
+anchor Developer [0.97, 0.55]
+
+component Confidence [0.88, 0.48] label [-62, -15]
+component CLI Smoke Tests [0.78, 0.65]
+component Golden-file Snapshots [0.72, 0.58] label [-120, 4]
+component Renderer Unit Tests [0.62, 0.48]
+component Parser Assertions [0.55, 0.35] label [-105, 4]
+component Coordinate Maths [0.35, 0.82]
+component Example Files [0.28, 0.15] (build) inertia
+component Themes [0.40, 0.72]
+component DSL Parser [0.20, 0.62]
+
+Developer->Confidence
+Confidence->CLI Smoke Tests
+Confidence->Golden-file Snapshots
+Confidence->Renderer Unit Tests
+Confidence->Parser Assertions
+
+CLI Smoke Tests->Example Files
+Golden-file Snapshots->Example Files
+Golden-file Snapshots->Themes
+Renderer Unit Tests->Coordinate Maths
+Parser Assertions->DSL Parser
+
+annotation 1 [[0.28, 0.15]] STORM examples are genesis — creative, irreducible, the source of all fixtures
+annotation 2 [0.35, 0.82] Coordinate maths is commodity — pure functions any graphics system has
+annotations [0.92, 0.02]
+
+note +the tool maps its own quality [0.84, 0.08]
+
+style wardley

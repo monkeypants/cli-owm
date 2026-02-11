@@ -1,0 +1,31 @@
+// How Data Becomes an Asset
+//
+// Data evolves from Unmodelled (raw, inconsistent) through Divergent
+// and Convergent to Modelled (structured, standardised, API-accessible).
+// STORM's traction demand signals are Divergent — collected but not yet
+// standardised.  Atmospheric pressure data is Modelled — it comes from
+// commodity weather APIs.
+//
+// Unmodelled data is a strategic liability.  Modelled data is an
+// operational utility.  The transition from Divergent to Convergent
+// is where STORM decides whether data becomes a weapon or just
+// another line item on the volcano maintenance budget.
+
+title Weather Forecasting Data Maturity
+
+evolution Unmodelled->Divergent->Convergent->Modelled
+
+anchor VLK Fleet [0.95, 0.45]
+
+component Traction Demand Signals [0.80, 0.28]
+component Wind Pattern Data [0.65, 0.62]
+component Trade Route Traffic [0.55, 0.75]
+component Ocean Current Models [0.45, 0.48]
+component Atmospheric Pressure [0.35, 0.82]
+
+VLK Fleet->Traction Demand Signals
+VLK Fleet->Wind Pattern Data
+Traction Demand Signals->Trade Route Traffic
+Traction Demand Signals->Wind Pattern Data
+Wind Pattern Data->Ocean Current Models
+Wind Pattern Data->Atmospheric Pressure

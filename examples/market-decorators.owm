@@ -1,0 +1,40 @@
+// Positioning in the Landscape
+//
+// Markets, ecosystems, and sourcing decorators position STORM within
+// the broader competitive landscape.  Maritime Traction is a market
+// STORM is creating.  The Shipping Industry is an ecosystem STORM
+// participates in but doesn't control.  Combined decorators (market + buy)
+// show both the market context and STORM's sourcing posture.
+//
+// Distinguish between markets STORM is creating, markets it's buying
+// from, and ecosystems it's embedded in.  Each requires a different
+// strategic posture — and a different memo template.
+
+title STORM Market Positioning
+
+anchor Supreme Leader [0.97, 0.50]
+
+// Standalone market keyword
+market Maritime Traction [0.82, 0.55]
+
+// Market decorator on component
+component Hydrogen Supply [0.60, 0.65] (market)
+
+// Combined market and execution decorators
+component Carbon Fibre [0.48, 0.75] (market, buy)
+component Cloud Infrastructure [0.38, 0.85] (market, outsource)
+
+// Ecosystem decorator
+component Shipping Industry [0.72, 0.78] (ecosystem)
+
+// Evolve with market decorator — Weather Data moves toward
+// a market where STORM can buy rather than generate in-house
+component Weather Data [0.55, 0.40]
+evolve Weather Data 0.70 (market)
+
+Supreme Leader->Maritime Traction
+Maritime Traction->Shipping Industry
+Maritime Traction->Hydrogen Supply
+Hydrogen Supply->Carbon Fibre
+Carbon Fibre->Cloud Infrastructure
+Supreme Leader->Weather Data

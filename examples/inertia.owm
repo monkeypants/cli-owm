@@ -1,0 +1,46 @@
+// Why Incumbents Fail to Adapt
+//
+// The shipping industry runs on diesel.  Diesel propulsion, fuel supply
+// chains, port bunkering infrastructure — decades of investment create
+// structural resistance to change.  This is inertia: the tendency of
+// existing systems to resist evolution even when better alternatives exist.
+//
+// STORM's opportunity exists precisely because of this inertia.  The
+// harder it is for incumbents to switch, the longer STORM has to build
+// its VLK fleet before competition arrives.
+//
+// Inertia is not always the enemy.  STORM's own inertia protects
+// the lair's infrastructure investments in stable operations.  But
+// when the landscape shifts, the same inertia becomes a trap.
+
+title Legacy Shipping Industry Resistance
+
+anchor Shipping Line [0.95, 0.58]
+
+component Traction on Demand [0.82, 0.42]
+component VLK Unit [0.68, 0.25]
+
+// Keyword form of inertia
+component Diesel Propulsion [0.72, 0.72] inertia
+
+// Parenthesised form — both syntaxes work identically
+component Fuel Supply Chain [0.55, 0.80] (inertia)
+
+component Port Infrastructure [0.42, 0.75]
+
+// Markets can carry inertia too — the bunker fuel market resists
+// the switch to wind traction because its entire ecosystem depends
+// on the status quo.
+market Bunker Fuel Market [0.35, 0.85] inertia
+
+// The strategic bet: replace a commodity (diesel) with a genesis
+// alternative (wind traction).  The arrow points left — this isn't
+// natural evolution, it's deliberate disruption.
+evolve Diesel Propulsion->Wind Traction 0.35
+
+Shipping Line->Traction on Demand
+Shipping Line->Diesel Propulsion
+Traction on Demand->VLK Unit
+Diesel Propulsion->Fuel Supply Chain
+Fuel Supply Chain->Bunker Fuel Market
+Diesel Propulsion->Port Infrastructure

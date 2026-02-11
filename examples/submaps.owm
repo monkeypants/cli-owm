@@ -1,0 +1,30 @@
+// Decomposing Complexity
+//
+// The Supreme Leader sees three boxes: VLK Programme, Fleet Operations,
+// and Commercial Division.  Each box links to a detailed sub-map where
+// the relevant team works at a finer grain.  Different stakeholders
+// need different zoom levels — the board sees the overview, the
+// engineering lead sees component-level evolution targets.
+//
+// If the map has more than 15-20 components, decompose.  Sub-maps
+// let teams own their section of the landscape while the Supreme
+// Leader maintains the strategic overview from the command chair.
+
+title STORM Strategic Decomposition
+
+anchor Supreme Leader [0.97, 0.50]
+
+// Submaps link to detailed maps at a different zoom level
+submap VLK Programme [0.82, 0.28] url(vlkDetail)
+submap Fleet Operations [0.68, 0.50] url(fleetDetail) label [-105, 30]
+
+component Commercial Division [0.78, 0.68]
+
+// URL definitions — where the detailed maps live
+url vlkDetail [https://onlinewardleymaps.com/#clone:vlk-programme-detail]
+url fleetDetail [https://onlinewardleymaps.com/#clone:fleet-operations-detail]
+
+Supreme Leader->VLK Programme
+Supreme Leader->Commercial Division
+VLK Programme->Fleet Operations
+Commercial Division->Fleet Operations

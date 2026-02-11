@@ -1,0 +1,34 @@
+// The Risk Assessment
+//
+// VLK end-of-life.  When structural fatigue makes a kite unviable,
+// STORM triggers a boom-pop: controlled ignition of the hydrogen
+// envelope.  Safe, spectacular, and documented with a TPS report.
+//
+// The dark style signals gravity — decommissioning, risk, end-of-life.
+// This is the map you show when something is being retired.
+//
+// Every component eventually reaches end of life — even the kites.
+// Dark-themed maps frame the conversation around what's being
+// switched off, not what's new.  Useful for sunset planning and
+// for anything involving controlled explosions.
+
+title Boom-Pop Decommissioning
+
+style dark
+
+anchor Fleet Operations [0.95, 0.55]
+
+component Structural Assessment [0.82, 0.65]
+component Airspace Clearance [0.78, 0.78]
+component Controlled Ignition [0.65, 0.40]
+component Hydrogen Venting [0.55, 0.50]
+component TPS Report Filing [0.42, 0.85]
+component Debris Recovery [0.40, 0.55]
+
+Fleet Operations->Structural Assessment
+Fleet Operations->Airspace Clearance
+Structural Assessment->Controlled Ignition
+Airspace Clearance->Controlled Ignition
+Controlled Ignition->Hydrogen Venting
+Controlled Ignition->Debris Recovery
+Controlled Ignition->TPS Report Filing

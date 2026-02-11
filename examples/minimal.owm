@@ -1,0 +1,19 @@
+// Every Map Starts With a Need
+//
+// A shipping line needs traction.  STORM provides it via autonomous
+// dirigible kites.  That's the entire value proposition in three nodes:
+// a user, a need, and the capability that fulfils it.
+//
+// The Supreme Leader's first rule of strategic cartography: if you
+// can't name who needs it, you don't have a strategy — you have
+// a technology looking for a problem.
+
+title VLK Traction Service
+
+anchor Shipping Line [0.95, 0.58]
+
+component Traction on Demand [0.82, 0.42]
+component VLK Unit [0.68, 0.25]
+
+Shipping Line->Traction on Demand
+Traction on Demand->VLK Unit

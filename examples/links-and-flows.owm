@@ -1,0 +1,42 @@
+// Dependencies vs. Value Flows
+//
+// Not all lines on a map mean the same thing.  A dependency link
+// (A->B) says "A needs B to function."  A flow (A+>B) says "value
+// moves from A to B."  The VLK-service ship relationship has both:
+// structural dependency AND bidirectional exchange of traction,
+// hydrogen, and maintenance.
+//
+// If every line on the map is a simple arrow, the economic structure
+// is hidden.  Flows reveal where value actually moves — which at
+// STORM is often not the same direction as the dependency chain.
+
+title VLK Service Ship Symbiosis
+
+anchor Shipping Line [0.95, 0.55]
+
+component Traction on Demand [0.82, 0.48]
+component VLK Unit [0.72, 0.25]
+component Service Ship [0.58, 0.50]
+component Hydrogen Supply [0.45, 0.62]
+component Submerged Turbines [0.35, 0.72]
+component Maintenance Crew [0.50, 0.35]
+
+// Dependency links — the basic value chain
+Shipping Line->Traction on Demand
+Traction on Demand->VLK Unit
+
+// Bidirectional flow — the core symbiotic exchange
+VLK Unit+<>Service Ship
+
+// Forward flow — turbines generate hydrogen
+Submerged Turbines+>Hydrogen Supply
+
+// Reverse flow — hydrogen feeds back up to the kite
+Hydrogen Supply+<VLK Unit
+
+// Labelled forward flow — makes the exchange explicit
+VLK Unit+'wind energy'>Submerged Turbines
+
+// Links with context annotations
+Service Ship->Maintenance Crew; in-flight repairs only
+Maintenance Crew->VLK Unit; while tethered

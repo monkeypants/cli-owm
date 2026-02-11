@@ -1,0 +1,32 @@
+// The Danger of Unmapped Strategy
+//
+// At the Monday all-hands, the Supreme Leader rattled off half a
+// dozen agenda items.  Nobody bothered to position them on the map.
+// The parser defaults unpositioned elements to [0.9, 0.1] — watch
+// them clump in the upper left, a visual symptom of unstrategy.
+//
+// When everything clumps at the same coordinates, nobody has thought
+// about where things actually sit.  Clustering is the smell of a
+// planning meeting that skipped the hard questions.
+
+title Emergency All-Hands (Volcano Lair)
+
+// Unpositioned anchor — uses parser default coordinates
+anchor Supreme Leader []
+
+// Unpositioned components — they'll clump together
+component Mandatory Fun Committee
+component TPS Report Compliance
+
+// Positioned components from prior planning sessions
+component VLK Maintenance Rota [0.65, 0.42]
+component Henchman Dental Plan [0.50, 0.62]
+component Suggestion Box [0.40, 0.78] label [-75, 4]
+component Hydrogen Storage Fees [0.55, 0.35]
+
+Supreme Leader->Mandatory Fun Committee
+Supreme Leader->TPS Report Compliance
+Mandatory Fun Committee->VLK Maintenance Rota
+TPS Report Compliance->Henchman Dental Plan
+Henchman Dental Plan->Suggestion Box; never read
+VLK Maintenance Rota->Hydrogen Storage Fees

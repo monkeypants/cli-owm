@@ -1,0 +1,41 @@
+// Managing Across Maturities
+//
+// STORM doesn't have one kite — it has a portfolio.  Prototype Kite
+// (Genesis, R&D), Production Kite (Custom, fleet workhorse), and
+// Mega Kite (Product, primary revenue).  A pipeline shows components
+// at different evolution stages within a single capability.
+//
+// A single component that secretly contains variants at different
+// maturities — the Prototype Kite, the Production Kite, the Mega
+// Kite — is a pipeline.  Each variant needs different management,
+// funding, and team culture.  STORM learned not to run R&D and
+// fleet ops with the same playbook.
+
+title VLK Propulsion Pipeline
+
+anchor Shipping Line [0.95, 0.55]
+
+component Traction on Demand [0.82, 0.48]
+
+// Nested pipeline with children — the modern syntax
+component VLK Unit [0.68, 0.40]
+pipeline VLK Unit
+{
+  component Prototype Kite [0.18]
+  component Production Kite [0.45]
+  component Mega Kite [0.72]
+}
+
+Shipping Line->Traction on Demand
+Traction on Demand->VLK Unit
+Traction on Demand->Mega Kite; primary revenue
+Traction on Demand->Production Kite; fleet workhorse
+
+// Legacy pipeline syntax — explicit evolution range.
+// Both syntaxes produce the same visual result.
+// The Hydrogen Supply pipeline spans from bespoke (service ship rigs)
+// to commodity (industrial electrolysis plants).
+component Hydrogen Supply [0.45, 0.55]
+pipeline Hydrogen Supply [0.25, 0.85]
+
+VLK Unit->Hydrogen Supply

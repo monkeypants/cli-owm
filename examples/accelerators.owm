@@ -1,0 +1,33 @@
+// Reading the Climate
+//
+// Evolution doesn't happen in a vacuum.  External forces accelerate
+// or decelerate the pace of change.  Rising fuel costs and carbon
+// shipping levies push shipping lines toward wind traction faster.
+// Maritime regulation inertia and port infrastructure lock-in slow
+// the transition down.
+//
+// The Supreme Leader reads the climate daily.  Accelerators create
+// urgency; decelerators create breathing room.  Strategy is partly
+// about choosing which forces to amplify and which to resist.
+
+title Forces Affecting VLK Adoption
+
+anchor Shipping Line [0.95, 0.58]
+
+component Traction on Demand [0.82, 0.45]
+component VLK Unit [0.70, 0.25]
+component Hydrogen Supply [0.55, 0.55]
+component Carbon Regulations [0.65, 0.72]
+
+Shipping Line->Traction on Demand
+Traction on Demand->VLK Unit
+VLK Unit->Hydrogen Supply
+Traction on Demand->Carbon Regulations
+
+// Forces that accelerate VLK adoption
+accelerator rising_fuel_costs [0.78, 0.65]
+accelerator carbon_shipping_levies [0.58, 0.82]
+
+// Forces that slow VLK adoption
+deaccelerator maritime_regulation_inertia [0.72, 0.38]
+deaccelerator port_infrastructure_lock_in [0.48, 0.62]

@@ -1,0 +1,34 @@
+// Strategic Observations
+//
+// Notes are lightweight annotations — observations, assumptions,
+// and forward-looking bets that don't belong in the value chain
+// structure but need to be visible on the map.
+//
+// The + prefix makes a note visually prominent (highlighted).
+// Use it for the most important strategic observation on the map.
+//
+// Notes capture what the team believes but hasn't proven — the
+// hypotheses that should be tested next.  A map without notes is
+// a map without questions.  The Supreme Leader has questions.
+
+title VLK Fleet Deployment
+
+anchor Shipping Line [0.95, 0.58]
+
+component Traction on Demand [0.82, 0.45]
+component VLK Unit [0.70, 0.25]
+component Service Ship [0.55, 0.48]
+component Weather Forecasting [0.60, 0.68]
+
+Shipping Line->Traction on Demand
+Traction on Demand->VLK Unit
+VLK Unit->Service Ship
+VLK Unit->Weather Forecasting
+
+// Highlighted note — the strategic North Star
+note +flying sailboat research [0.88, 0.08]
+
+// Standard notes — observations and assumptions
+note VLKs never land [0.62, 0.12]
+note boom-pop if beyond repair [0.42, 0.35]
+note carbon neutral by design [0.48, 0.72]

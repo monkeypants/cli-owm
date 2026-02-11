@@ -1,0 +1,28 @@
+// How Knowledge Matures
+//
+// Knowledge evolves from Concept through Hypothesis and Theory to
+// Accepted.  STORM's R&D risk follows this curve: autonomous flight
+// control is still at the Concept stage — unproven and expensive.
+// Kite aerodynamics is Accepted science, low risk.
+//
+// R&D spend concentrates at the Concept end.  If the lab is spending
+// research budget on Accepted knowledge, they're doing engineering,
+// not research — and the Supreme Leader will reorganise accordingly.
+
+title Atmospheric Science Knowledge
+
+evolution Concept->Hypothesis->Theory->Accepted
+
+anchor VLK Programme [0.95, 0.45]
+
+component Kite Aerodynamics [0.80, 0.82]
+component Hydrogen Buoyancy [0.70, 0.60]
+component High-Altitude Wind Patterns [0.60, 0.48]
+component Tether Dynamics [0.55, 0.32]
+component Autonomous Flight Control [0.45, 0.20]
+
+VLK Programme->Kite Aerodynamics
+VLK Programme->Hydrogen Buoyancy
+Kite Aerodynamics->High-Altitude Wind Patterns
+Kite Aerodynamics->Tether Dynamics
+Tether Dynamics->Autonomous Flight Control

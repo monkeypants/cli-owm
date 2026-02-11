@@ -1,0 +1,71 @@
+// STORM Strategic Overview
+//
+// The capstone: every concept combined in one map.  Value chain
+// anchors, evolution labels, pipeline, sourcing decorators, flows,
+// annotations, PST overlays, accelerators, and a strategic note.
+//
+// This is what a mature Wardley map looks like — dense but readable,
+// with every element earning its place.  The flying sailboat dream
+// echoes through the strategic choices: every evolution target serves
+// a vessel that sails through the sky.
+//
+// Nobody builds a map this complete on day one.  Start with a
+// user and a need, then add layers as the strategic picture sharpens.
+
+title STORM Strategic Overview
+
+style wardley
+size [800, 700]
+evolution Genesis->Custom->Product->Commodity
+
+// Value chain anchors — who depends on this map
+anchor Shipping Line [0.95, 0.58]
+anchor Supreme Leader [0.97, 0.22]
+
+// Core components with defensible positioning
+component Traction on Demand [0.82, 0.48] label [10, -20]
+component VLK Unit [0.72, 0.25] (build)
+component Service Ship [0.58, 0.50]
+component Hydrogen Supply [0.45, 0.62]
+component AI Autopilot [0.65, 0.15] (build)
+component Seawater Electrolysis [0.32, 0.82] (outsource)
+component Carbon Fibre [0.38, 0.70] inertia
+
+// Pipeline of VLK maturity variants
+pipeline VLK Unit
+{
+  component Prototype Kite [0.18]
+  component Production Kite [0.42]
+}
+
+// Technology evolution — AI Autopilot moves toward a buy decision
+evolve AI Autopilot->Cloud Autopilot 0.50 (buy) label [10, -15]
+
+// Dependency chain
+Shipping Line->Traction on Demand
+Supreme Leader->VLK Unit
+Traction on Demand->VLK Unit
+VLK Unit->AI Autopilot
+VLK Unit->Carbon Fibre
+Service Ship->Hydrogen Supply
+Hydrogen Supply->Seawater Electrolysis
+
+// Labelled flow — makes the exchange explicit
+VLK Unit+'traction'>Service Ship
+
+// Annotations tell the strategic story
+annotation 1 [[0.70, 0.27],[0.56, 0.52]] VLK-service ship symbiosis is the core innovation
+annotation 2 [0.40, 0.72] Carbon fibre sourcing resists commoditisation
+annotations [0.92, 0.02]
+
+// The North Star
+note +flying sailboat [0.88, 0.08]
+
+// Organisation overlays
+pioneers [0.90, 0.00, 0.78, 0.30]
+settlers [0.72, 0.30, 0.52, 0.60]
+townplanners [0.50, 0.60, 0.28, 0.95]
+
+// Climate forces
+accelerator carbon_shipping_levies [0.38, 0.88]
+deaccelerator maritime_regulation [0.62, 0.12]

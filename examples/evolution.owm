@@ -1,0 +1,40 @@
+// Everything Evolves
+//
+// Components move rightward over time.  STORM's VLK Prototype is
+// Genesis today, but the plan is to evolve it to a Production VLK
+// (Custom-Built, manufactured at scale).  Evolution changes everything:
+// sourcing model, team structure, competitive dynamics.
+//
+// The evolve keyword shows planned movement — where a component is
+// going and what decisions that implies.
+//
+// Standing order from the Q2 offsite: if nothing on the map is
+// evolving, either the market is truly static (unlikely) or the
+// map is out of date.  Update it or face Questions.
+
+title VLK Technology Evolution
+
+anchor Supreme Leader [0.97, 0.50]
+
+component VLK Prototype [0.82, 0.20] (build)
+component Navigation System [0.68, 0.25]
+component Tether Winch [0.55, 0.40]
+component Hydrogen Envelope [0.72, 0.35]
+
+// Basic evolution — Tether Winch matures toward Product
+evolve Tether Winch 0.72
+
+// Evolution with renaming — the thing changes as it matures
+evolve VLK Prototype->Production VLK 0.55
+
+// When a component evolves, ask whether it needs a new name.  A
+// prototype becoming a product is a different thing with different
+// economics, even if the technology is continuous.
+evolve Navigation System 0.60 (buy)
+
+evolve Hydrogen Envelope 0.65 label [10, -20]
+
+Supreme Leader->VLK Prototype
+VLK Prototype->Navigation System
+VLK Prototype->Hydrogen Envelope
+VLK Prototype->Tether Winch

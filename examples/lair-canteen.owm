@@ -1,0 +1,51 @@
+// The Henchman Canteen
+//
+// The volcano lair canteen serves one thing: minestrone.  It is
+// surprisingly good.  The recipe is classified (see NDA section 7).
+//
+// This map is a direct value chain from stakeholder need to deep
+// infrastructure.  The Mandatory Fun Committee mandates morale;
+// henchmen consume minestrone; the minestrone depends on broth,
+// bowls, and a volcanic cauldron heated by lava vents.
+//
+// Even the simplest value chain reveals evolution.  The cauldron
+// is Custom-Built — bespoke volcanic plumbing.  Evolving it to a
+// geothermal tap commoditises the heat source and frees the kitchen
+// to focus on what actually differentiates: the recipe.
+
+title Lair Canteen
+
+anchor Mandatory Fun Committee [0.95, 0.63]
+anchor Disposable Henchmen [0.95, 0.78]
+
+component Bowl of Minestrone [0.79, 0.61] label [-110, 4]
+component Bowl [0.73, 0.78]
+component Minestrone Recipe [0.63, 0.81]
+component Hot Broth [0.52, 0.80]
+component Seawater [0.38, 0.82]
+component Volcanic Cauldron [0.43, 0.35] label [-100, 4]
+
+// The cauldron evolves: bespoke volcanic plumbing gives way to
+// standardised geothermal taps.  Same lesson as any custom
+// infrastructure you're maintaining by hand.
+evolve Volcanic Cauldron->Geothermal Tap 0.62 label [16, 5]
+
+component Lava Vent [0.1, 0.7] label [-48, 20]
+evolve Lava Vent 0.89 label [-12, 21]
+
+Mandatory Fun Committee->Bowl of Minestrone
+Disposable Henchmen->Bowl of Minestrone
+Bowl of Minestrone->Bowl
+Bowl of Minestrone->Minestrone Recipe
+Bowl of Minestrone->Hot Broth
+Hot Broth->Seawater
+Hot Broth->Volcanic Cauldron; limited by
+Volcanic Cauldron->Lava Vent
+
+annotation 1 [[0.43,0.49],[0.08,0.79]] Standardising lava vents allows Cauldrons to evolve faster
+annotation 2 [0.48, 0.85] Hot broth is obvious and well known
+annotations [0.72, 0.03]
+
+note +recipe is classified — see NDA section 7 [0.23, 0.33]
+
+style wardley

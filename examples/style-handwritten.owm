@@ -1,0 +1,30 @@
+// The Napkin Sketch
+//
+// The Supreme Leader's original pitch, sketched on a napkin at a
+// harbour bar.  Now framed in breakout room B.  Every strategy
+// starts messy, visionary, and incomplete.  The handwritten style
+// is honest about that — it says "this is a hypothesis, not a plan."
+//
+// The first map of any new initiative should look exactly this rough.
+// If the first draft is polished, someone drew what they wanted to
+// see rather than what they actually know.
+
+title The Flying Sailboat
+
+style handwritten
+
+anchor The Dream [0.97, 0.45]
+
+component Flying Sailboat [0.85, 0.12]
+component VLK Technology [0.72, 0.30]
+component Autonomous Navigation [0.60, 0.22]
+component Hydrogen Buoyancy [0.55, 0.45]
+component Wind Propulsion [0.68, 0.58]
+component Boyhood Fantasy [0.90, 0.08]
+
+The Dream->Flying Sailboat
+The Dream->Boyhood Fantasy
+Flying Sailboat->VLK Technology
+Flying Sailboat->Wind Propulsion
+VLK Technology->Autonomous Navigation
+VLK Technology->Hydrogen Buoyancy
