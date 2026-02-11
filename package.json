@@ -27,5 +27,9 @@
     "esbuild": "^0.25.0",
     "vitest": "^4.0.18"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monkeypants/cli-owm.git"
+  }
 }
