@@ -40,6 +40,11 @@ If no input file is given, reads from stdin.
 - No browser required -- pure Node.js
 - Library API: `parse()` and `render()` for programmatic use
 
+## Examples
+
+See the [examples gallery](https://monkeypants.github.io/cli-owm/) for
+rendered SVG output from the DSL files in `examples/`.
+
 ## Parser
 
 The DSL parser is vendored from the
