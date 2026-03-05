@@ -27,6 +27,9 @@
     "esbuild": "^0.25.0",
     "vitest": "^4.0.18"
   },
+  "overrides": {
+    "rollup": ">=4.59.0"
+  },
   "license": "GPL-2.0-or-later",
   "repository": {
     "type": "git",
