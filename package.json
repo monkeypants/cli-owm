@@ -24,7 +24,7 @@
     "@types/lodash.merge": "^4.6.9",
     "@types/node": "^20.0.0",
     "typescript": "^5.5.0",
-    "esbuild": "^0.25.0",
+    "esbuild": "^0.28.1",
     "vitest": "^4.0.18"
   },
   "overrides": {
